@@ -81,8 +81,10 @@ int main(void)
        system_stm32f4xx.c file
      */
 
+	#ifdef USE_LCD
   /*Initialize LCD and Leds */ 
   LCD_LED_Init();
+	#endif
   
   /* configure ethernet (GPIOs, clocks, MAC, DMA) */ 
   ETH_BSP_Config();
@@ -130,6 +132,7 @@ void Time_Update(void)
   LocalTime += SYSTEMTICK_PERIOD_MS;
 }
 
+#ifdef USE_LCD
 /**
   * @brief  Initializes the STM324xG-EVAL's LCD and LEDs resources.
   * @param  None
@@ -159,6 +162,7 @@ void LCD_LED_Init(void)
   LCD_DisplayStringLine(Line3, (uint8_t*)MESSAGE4);  
 #endif
 }
+#endif
 
 #ifdef  USE_FULL_ASSERT
 

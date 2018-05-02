@@ -333,6 +333,9 @@ void STM_EVAL_COMInit(COM_TypeDef COM, USART_InitTypeDef* USART_InitStruct)
   USART_Cmd(COM_USART[COM], ENABLE);
 }
 
+#if 0
+// #ifdef USE_SDIO
+
 /**
   * @}
   */ 
@@ -511,6 +514,7 @@ void SD_LowLevel_DMA_RxConfig(uint32_t *BufferDST, uint32_t BufferSize)
   /* DMA2 Stream3 or Stream6 enable */
   DMA_Cmd(SD_SDIO_DMA_STREAM, ENABLE);
 }
+#endif
 
 /**
   * @}
