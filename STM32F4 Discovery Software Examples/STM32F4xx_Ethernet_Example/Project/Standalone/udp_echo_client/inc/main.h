@@ -56,17 +56,18 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
-#define USE_LCD        /* enable LCD  */  
+// #define USE_LCD        /* enable LCD  */  
+#undef USE_LCD
 //#define USE_DHCP       /* enable DHCP, if disabled static address is used */
 
 
 #define DEST_IP_ADDR0   192
 #define DEST_IP_ADDR1   168
-#define DEST_IP_ADDR2   0
-#define DEST_IP_ADDR3   11
+#define DEST_IP_ADDR2   2
+#define DEST_IP_ADDR3   137
 
 #define UDP_SERVER_PORT    7   /* define the UDP local connection port */
-#define UDP_CLIENT_PORT    7   /* define the UDP remote connection port */   
+#define UDP_CLIENT_PORT    8   /* define the UDP remote connection port */   
    
 /* MAC ADDRESS: MAC_ADDR0:MAC_ADDR1:MAC_ADDR2:MAC_ADDR3:MAC_ADDR4:MAC_ADDR5 */
 #define MAC_ADDR0   2
@@ -79,8 +80,8 @@
 /*Static IP ADDRESS: IP_ADDR0.IP_ADDR1.IP_ADDR2.IP_ADDR3 */
 #define IP_ADDR0   192
 #define IP_ADDR1   168
-#define IP_ADDR2   0
-#define IP_ADDR3   10
+#define IP_ADDR2   2
+#define IP_ADDR3   231
    
 /*NETMASK*/
 #define NETMASK_ADDR0   255
@@ -91,7 +92,7 @@
 /*Gateway Address*/
 #define GW_ADDR0   192
 #define GW_ADDR1   168
-#define GW_ADDR2   0
+#define GW_ADDR2   2
 #define GW_ADDR3   1  
 
 /* MII and RMII mode selection, for STM324xG-EVAL Board(MB786) RevB ***********/

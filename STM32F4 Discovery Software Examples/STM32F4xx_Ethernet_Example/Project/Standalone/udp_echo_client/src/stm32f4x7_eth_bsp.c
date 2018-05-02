@@ -72,12 +72,14 @@ void ETH_BSP_Config(void)
   /* Configure the Ethernet MAC/DMA */
   ETH_MACDMA_Config();
 
+#ifdef USE_LCD
   if (EthInitStatus == 0) {
     LCD_SetTextColor(LCD_COLOR_RED);
     LCD_DisplayStringLine(LINE(5), (uint8_t*)"   Ethernet Init   ");
     LCD_DisplayStringLine(LINE(6), (uint8_t*)"      failed      ");
     while(1);
   }
+#endif
   
   /* Configure Systick clock source as HCLK */
   SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);

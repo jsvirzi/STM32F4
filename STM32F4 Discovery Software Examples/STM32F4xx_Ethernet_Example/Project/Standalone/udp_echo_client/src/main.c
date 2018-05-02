@@ -64,7 +64,7 @@ uint32_t Button_TimerBack;
 __IO uint32_t Button_Flag;
 
 /* Private function prototypes -----------------------------------------------*/
-void LCD_LED_BUTTON_Init(void);
+// void LCD_LED_BUTTON_Init(void);
 uint8_t Button_State(void);
 
 /* Private functions ---------------------------------------------------------*/
@@ -83,7 +83,9 @@ int main(void)
        system_stm32f4xx.c file
      */  
   /*Initialize LCD and Leds */ 
+#ifdef USE_LCD
   LCD_LED_BUTTON_Init();
+#endif
   
   /* Configure ethernet (GPIOs, clocks, MAC, DMA) */ 
   ETH_BSP_Config();
@@ -165,6 +167,8 @@ void Time_Update(void)
   LocalTime += SYSTEMTICK_PERIOD_MS;
 }
 
+#ifdef USE_LCD
+
 /**
   * @brief  Initializes the STM324xG-EVAL's LCD and LEDs resources.
   * @param  None
@@ -195,6 +199,8 @@ void LCD_LED_BUTTON_Init(void)
 #endif
   STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_EXTI);
 }
+
+#endif
 
 #ifdef  USE_FULL_ASSERT
 
